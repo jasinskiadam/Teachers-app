@@ -1,5 +1,5 @@
 import { GlobalStyle } from 'assets/styles/GlobalStyles';
-import UsersList from 'components/organisms/UsersList/UsersList';
+import StudentsList from 'components/organisms/StudentsList/StudentsList';
 import styled, { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
 
@@ -16,7 +16,7 @@ const Root = () => (
   <ThemeProvider theme={theme}>
     <GlobalStyle />
     <Wrapper>
-      <UsersList />
+      <StudentsList />
     </Wrapper>
   </ThemeProvider>
 );
