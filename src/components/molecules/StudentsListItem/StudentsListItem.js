@@ -3,14 +3,19 @@ import Button from 'components/atoms/Button/Button';
 import { Average } from 'components/atoms/Average/Average';
 import { StyledInfo, Wrapper } from './StudentsListItem.styles';
 
-const StudentsListItem = ({ studentData: { average, name, attendance } }) => (
+const showIndex = (index) => alert(`This is student #${index + 1}`);
+
+const StudentsListItem = ({
+  index,
+  studentData: { average, name, attendance },
+}) => (
   <Wrapper>
     <Average value={average}>{average}</Average>
     <StyledInfo>
       <p>{name}</p>
       <p>{attendance}</p>
     </StyledInfo>
-    <Button />
+    <Button onClick={() => showIndex(index)} />
   </Wrapper>
 );
 
