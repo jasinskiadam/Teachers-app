@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Button from 'components/atoms/Button/Button';
+import DeleteButton from 'components/atoms/DeleteButton/DeleteButton';
 import { Average } from 'components/atoms/Average/Average';
 import { StyledInfo, Wrapper } from './StudentsListItem.styles';
 
@@ -10,7 +10,7 @@ const StudentsListItem = ({ deleteStudent, studentData: { average, name, attenda
       <p>{name}</p>
       <p>{attendance}</p>
     </StyledInfo>
-    <Button onClick={() => deleteStudent(name)} />
+    <DeleteButton onClick={() => deleteStudent(name)} />
   </Wrapper>
 );
 
