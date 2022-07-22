@@ -1,25 +1,25 @@
-import { students as studentData } from 'data/students';
 import StudentsListItem from 'components/molecules/StudentsListItem/StudentsListItem';
-import { Wrapper, StyledList } from './StudentsList.styles';
-import { useState } from 'react';
+import PropTypes from 'prop-types';
+import { StyledList } from './StudentsList.styles';
+import { Title } from 'components/atoms/Title/Title';
+import { StudentShape } from 'types';
 
-const StudentsList = () => {
-  const [students, setStudents] = useState(studentData);
-
-  const deleteStudent = (name) => {
-    const filteredStudents = students.filter((student) => student.name !== name);
-    setStudents(filteredStudents);
-  };
-
+const StudentsList = ({ students, deleteStudent }) => {
   return (
-    <Wrapper>
+    <>
+      <Title>Students list</Title>
       <StyledList>
         {students.map((studentData) => (
           <StudentsListItem deleteStudent={deleteStudent} key={studentData.name} studentData={studentData} />
         ))}
       </StyledList>
-    </Wrapper>
+    </>
   );
+};
+
+StudentsList.propTypes = {
+  students: PropTypes.arrayOf(PropTypes.shape(StudentShape)),
+  deleteStudent: PropTypes.func,
 };
 
 export default StudentsList;
