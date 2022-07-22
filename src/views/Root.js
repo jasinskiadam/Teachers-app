@@ -1,12 +1,13 @@
 import { GlobalStyle } from 'assets/styles/GlobalStyles';
-import StudentsList from 'components/organisms/StudentsList/StudentsList';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'assets/styles/theme';
 import { Wrapper } from './Root.styles';
 import { students as studentsData } from 'data/students';
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Form from 'components/organisms/Form/Form';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AddStudent from './AddStudent';
+import Dashboard from './Dashboard';
+import MainTemplate from 'components/templates/MainTemplate';
 
 const initialFormState = {
   name: '',
@@ -47,25 +48,23 @@ const Root = () => {
     <Router>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Wrapper>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/add-student">Add student</Link>
-          </nav>
-          <Routes>
-            <Route
-              path="/add-student"
-              element={
-                <Form
-                  formValues={formValues}
-                  handleAddStudent={handleAddStudent}
-                  handleInputChange={handleInputChange}
-                />
-              }
-            />
-            <Route path="/" element={<StudentsList deleteStudent={deleteStudent} students={students} />} />
-          </Routes>
-        </Wrapper>
+        <MainTemplate>
+          <Wrapper>
+            <Routes>
+              <Route
+                path="/add-student"
+                element={
+                  <AddStudent
+                    formValues={formValues}
+                    handleAddStudent={handleAddStudent}
+                    handleInputChange={handleInputChange}
+                  />
+                }
+              />
+              <Route path="/" element={<Dashboard deleteStudent={deleteStudent} students={students} />} />
+            </Routes>
+          </Wrapper>
+        </MainTemplate>
       </ThemeProvider>
     </Router>
   );
