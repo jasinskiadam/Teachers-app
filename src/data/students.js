@@ -1,31 +1,31 @@
 export const students = [
   {
-    name: 'Imie Nazwisko',
+    name: 'Adam Jakis',
     attendance: '38%',
     average: '2.3',
   },
   {
-    name: 'Imie Nazwisko',
+    name: 'Kacper Kowal',
     attendance: '45%',
     average: '2.5',
   },
   {
-    name: 'Imie Nazwisko',
+    name: 'Dominik Niemiec',
     attendance: '70%',
     average: '4.0',
   },
   {
-    name: 'Imie Nazwisko',
+    name: 'Grzegorz Braun',
     attendance: '40%',
     average: '3.0',
   },
   {
-    name: 'Imie Nazwisko',
+    name: 'Kamil Janiga',
     attendance: '46%',
     average: '2.9',
   },
   {
-    name: 'Imie Nazwisko',
+    name: 'Michał Tony',
     attendance: '79%',
     average: '4.5',
   },
