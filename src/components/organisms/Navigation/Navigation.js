@@ -10,7 +10,9 @@ const Navigation = () => {
           App
         </h1>
       </Logo>
-      <StyledLink to="/">Dashboard</StyledLink>
+      <StyledLink exact to="/">
+        Dashboard
+      </StyledLink>
       <StyledLink to="/add-student">Add student</StyledLink>
       <StyledLink to="/">Settings</StyledLink>
       <StyledLink to="/">Logout</StyledLink>

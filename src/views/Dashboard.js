@@ -1,19 +1,15 @@
-import PropTypes from 'prop-types';
+import { useContext } from 'react';
 import { ViewWrapper } from 'components/molecules/ViewWrapper/ViewWrapper';
 import StudentsList from 'components/organisms/StudentsList/StudentsList';
-import { StudentShape } from 'types';
+import { StudentsContext } from 'providers/StudentsProvider';
 
-const Dashboard = ({ students, deleteStudent }) => {
+const Dashboard = () => {
+  const { students } = useContext(StudentsContext);
   return (
     <ViewWrapper>
-      <StudentsList students={students} deleteStudent={deleteStudent} />
+      <StudentsList students={students} />
     </ViewWrapper>
   );
-};
-
-Dashboard.propTypes = {
-  students: PropTypes.arrayOf(PropTypes.shape(StudentShape)),
-  deleteStudent: PropTypes.func,
 };
 
 export default Dashboard;
