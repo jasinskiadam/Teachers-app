@@ -4,13 +4,13 @@ import { StyledList } from './StudentsList.styles';
 import { Title } from 'components/atoms/Title/Title';
 import { StudentShape } from 'types';
 
-const StudentsList = ({ students, deleteStudent }) => {
+const StudentsList = ({ students }) => {
   return (
     <>
       <Title>Students list</Title>
       <StyledList>
         {students.map((studentData) => (
-          <StudentsListItem deleteStudent={deleteStudent} key={studentData.name} studentData={studentData} />
+          <StudentsListItem key={studentData.name} studentData={studentData} />
         ))}
       </StyledList>
     </>
